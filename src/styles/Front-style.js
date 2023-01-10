@@ -1,12 +1,18 @@
 import { StyleSheet } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient'
 
 const front_style = StyleSheet.create({
     button_container: { 
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     
     button: {
-        backgroundColor: '#000'
+        colors:['red', 'yellow', 'green' ],
+        width: 120,
+        margin: 10,
+        padding: 10,
+        alignItems: 'center',
+        borderRadius: 10,
     }
 });
 
