@@ -1,12 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import Front from './src/panels/Front'
+import Login from './src/panels/Login'
 
-import global from './src/styles/Global-style'
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <Front/>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Front" component={Front} options={{headerShown: false}} />
+        <Stack.Screen name="Login" component={Login} options={{headerShown: false}} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
