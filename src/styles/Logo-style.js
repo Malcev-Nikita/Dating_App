@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 const logo_style = StyleSheet.create({
 
     logo_container: {
-        marginTop: 50,
+        marginTop: 40,
         flexDirection: 'row',
         alignItems: 'flex-start',
         marginLeft: 20

@@ -8,7 +8,7 @@ const button_style = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'flex-end',
-        marginBottom: 100,
+        marginBottom: 70,
     },
 
     total_black_button: {

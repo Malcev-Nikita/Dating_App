@@ -10,8 +10,8 @@ const global = StyleSheet.create({
 
     input_container: {
       flex: 1,
-      backgroundColor: '#fdfeee',
       justifyContent: 'center',
+      backgroundColor: '#fdfeee',
     },
     
 });

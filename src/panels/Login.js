@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image,TouchableOpacity } from 'react-native';
+import { Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { TextInput } from 'react-native-gesture-handler';
 
@@ -9,43 +9,65 @@ import input_style from '../styles/Input-style';
 import button_style from '../styles/Button-style';
 
 class Login extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            secure: true,
+        };
+
+        this.show = this.show.bind(this);
+    }
+
+    show() {
+        this.setState({
+            secure: !this.state.secure,
+        });
+    }
+    
     render() {
-      return (
-        // <View style={global.input_container}>
-            <KeyboardAwareScrollView resetScrollToCoords={{ x: 0, y: 0 }} scrollEnabled={false} contentContainerStyle={global.input_container}>
-                <View style={logo_style.logo_container} >
+        let eye;
 
-                    <Image source={require('../image/img/logo.png')} style={logo_style.logo} />
-                    <Text style={logo_style.logo_text} >FELL IN FEELS</Text>
+        if (this.state.secure) eye = <Image source={require('../image/icon/free-icon-open-eye.png')} style={input_style.password_icon} />
 
-                </View>
+        else  eye = <Image source={require('../image/icon/free-icon-eye.png')} style={input_style.password_icon} />
 
-                <View style={input_style.input_global_container}>
-                    <View style={input_style.input_container}>
-                        <Text style={input_style.input_text}>Номер телефона</Text>
-                        <TextInput style={input_style.input} selectionColor={'#23232340'} ref/>
+        
+        return (
+            <KeyboardAwareScrollView contentContainerStyle={{height: Dimensions.get('screen').height}}>
+                <View style={global.input_container}>
+                    <View style={logo_style.logo_container} >
+                        <Image source={require('../image/img/logo.png')} style={logo_style.logo} />
+                        <Text style={logo_style.logo_text} >FELL IN FEELS</Text>
                     </View>
 
-                    <View style={input_style.input_container}>
-                        <Text style={input_style.input_text}>Пароль</Text>
-                        <TextInput style={input_style.input} selectionColor={'#23232340'} ref='searchInput' />
-                        
+                    <View style={input_style.input_global_container}>
+                        <View style={input_style.input_container}>
+                            <Text style={input_style.input_text}>Номер телефона</Text>
+                            <TextInput style={input_style.input} selectionColor={'#23232340'} />
+                        </View>
+
+                        <View style={input_style.input_container}>
+                            <Text style={input_style.input_text}>Пароль</Text>
+                            <TextInput style={input_style.input} selectionColor={'#23232340'} secureTextEntry={this.state.secure} />
+                            <TouchableOpacity style={input_style.password_container} onPress={this.show}>
+                                {eye}
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                    <View style={button_style.total_black_button_container}>
+                        <TouchableOpacity style={button_style.total_grey_button} onPress={() => this.props.navigation.navigate('Front')}>
+                            <Image source={require('../image/icon/free-icon-back.png')} style={button_style.total_black_button_image} />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={button_style.total_black_button}>
+                            <Text style={button_style.total_black_button_text} >Войти</Text>
+                            <Image source={require('../image/icon/enter.png')} style={button_style.total_black_button_image} />
+                        </TouchableOpacity>
                     </View>
                 </View>
-
-                <View style={button_style.total_black_button_container}>
-
-                    <TouchableOpacity style={button_style.total_grey_button} onPress={() => this.props.navigation.navigate('Front')}>
-                        <Image source={require('../image/icon/free-icon-back.png')} style={button_style.total_black_button_image} />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={button_style.total_black_button}>
-                        <Text style={button_style.total_black_button_text} >Войти</Text>
-                        <Image source={require('../image/icon/enter.png')} style={button_style.total_black_button_image} />
-                    </TouchableOpacity>
-                </View>
-            </KeyboardAwareScrollView>
-            // </View>
+            </KeyboardAwareScrollView >
         );
     }
 }
