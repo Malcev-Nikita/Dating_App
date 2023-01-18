@@ -4,7 +4,8 @@ const global = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fdfeee',
-      justifyContent: 'center',
+      // justifyContent: 'center',
+      // alignItems: 'center',
     },
 });
 
