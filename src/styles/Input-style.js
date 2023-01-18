@@ -4,7 +4,6 @@ const input_style = StyleSheet.create({
     input_global_container: {
       flex: 1,
       justifyContent: 'center',
-      //alignItems: 'center',
     },
 
     input_container: {
@@ -22,6 +21,7 @@ const input_style = StyleSheet.create({
         borderRadius: 8,
         color: '#232323',
         paddingLeft: 13,
+
     },
     
     input_text: {

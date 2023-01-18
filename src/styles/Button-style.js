@@ -19,6 +19,7 @@ const button_style = StyleSheet.create({
         width: 200,
         height: 65,
         borderRadius: 25,
+        margin: 5,
     },  
 
     total_black_button_image: {
@@ -34,6 +35,17 @@ const button_style = StyleSheet.create({
         marginRight: 30,
         letterSpacing: 1.2,
     },
+
+    total_grey_button: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#eff0f2',
+        width: 65,
+        height: 65,
+        borderRadius: 25,
+        margin: 5,
+    },  
 });
 
 export default button_style
