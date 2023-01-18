@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native';
 
+
 const input_style = StyleSheet.create({
+    
     input_global_container: {
       flex: 1,
       justifyContent: 'center',

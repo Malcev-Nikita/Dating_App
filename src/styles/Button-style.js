@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient'
+
 
 const button_style = StyleSheet.create({
 
@@ -46,6 +46,7 @@ const button_style = StyleSheet.create({
         borderRadius: 25,
         margin: 5,
     },  
+    
 });
 
 export default button_style

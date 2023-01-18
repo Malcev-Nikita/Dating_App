@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient'
+
 
 const front_style = StyleSheet.create({
 
@@ -27,6 +27,7 @@ const front_style = StyleSheet.create({
         color: '#C91E5E',
         letterSpacing: 1.2,
     }
+    
 });
 
 export default front_style
