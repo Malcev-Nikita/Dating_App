@@ -13,10 +13,12 @@ const front_style = StyleSheet.create({
     login_text: {
         fontSize: 16,
         letterSpacing: 1.2,
+        height: 30,
     },
 
     login_button: {
         marginLeft: 10,
+        height: 30,
     },
 
     login_button_text: {
