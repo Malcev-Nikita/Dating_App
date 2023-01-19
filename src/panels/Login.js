@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { Component, useState } from 'react';
 import { Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { TextInput } from 'react-native-gesture-handler';
+import { TextInputMask } from 'react-native-masked-text'
 
 import global from '../styles/Global-style'
 import logo_style from '../styles/Logo-style';
 import input_style from '../styles/Input-style';
 import button_style from '../styles/Button-style';
 
-class Login extends React.Component {
+class Login extends Component {
     constructor(props) {
         super(props);
 
@@ -31,7 +32,7 @@ class Login extends React.Component {
         if (this.state.secure) eye = <Image source={require('../image/icon/free-icon-open-eye.png')} style={input_style.password_icon} />
 
         else  eye = <Image source={require('../image/icon/free-icon-eye.png')} style={input_style.password_icon} />
-
+        
         
         return (
             <KeyboardAwareScrollView contentContainerStyle={{height: Dimensions.get('screen').height}}>
@@ -44,7 +45,7 @@ class Login extends React.Component {
                     <View style={input_style.input_global_container}>
                         <View style={input_style.input_container}>
                             <Text style={input_style.input_text}>Номер телефона</Text>
-                            <TextInput style={input_style.input} selectionColor={'#23232340'} />
+                            <TextInput keyboardType='numeric' style={input_style.input} selectionColor={'#23232340'} />
                         </View>
 
                         <View style={input_style.input_container}>
