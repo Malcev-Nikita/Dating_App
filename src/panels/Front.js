@@ -20,7 +20,7 @@ class Front extends React.Component {
 
         <View style={button_style.total_black_button_container}>
 
-            <TouchableOpacity style={button_style.total_black_button}>
+            <TouchableOpacity style={button_style.total_black_button} onPress={() => this.props.navigation.navigate('Register')}>
               <Text style={button_style.total_black_button_text} >Начать</Text>
               <Image source={require('../image/icon/up-right-arrow.png')} style={button_style.total_black_button_image} />
             </TouchableOpacity>
