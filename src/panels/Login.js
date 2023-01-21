@@ -15,6 +15,7 @@ class Login extends Component {
 
         this.state = {
             secure: true,
+            text: '+7',
         };
 
         this.show = this.show.bind(this);
@@ -45,7 +46,17 @@ class Login extends Component {
                     <View style={input_style.input_global_container}>
                         <View style={input_style.input_container}>
                             <Text style={input_style.input_text}>Номер телефона</Text>
-                            <TextInput keyboardType='numeric' style={input_style.input} selectionColor={'#23232340'} />
+                            <TextInputMask style={input_style.input} type={'custom'} value={this.state.text} keyboardType='numeric'
+                                           options={{
+                                            mask: '+7 (***) ***-**-**',
+                                            withDDD: true,
+                                            dddMask: '+7 (***) ***-**-**',
+                                           }} 
+                                           onChangeText = {text => {
+                                            this.setState({
+                                                text: text
+                                            })
+                                           } }/>
                         </View>
 
                         <View style={input_style.input_container}>

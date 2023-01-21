@@ -2,6 +2,7 @@ import React, {Component, useState} from 'react';
 import { Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { TextInput } from 'react-native-gesture-handler';
+import { TextInputMask } from 'react-native-masked-text'
 
 import global from '../styles/Global-style'
 import logo_style from '../styles/Logo-style';
@@ -44,7 +45,17 @@ class Register extends Component {
                     <View style={input_style.input_global_container}>
                         <View style={input_style.input_container}>
                             <Text style={input_style.input_text}>Номер телефона</Text>
-                            <TextInput style={input_style.input} selectionColor={'#23232340'} />
+                            <TextInputMask style={input_style.input} type={'custom'} value={this.state.text} keyboardType='numeric'
+                                           options={{
+                                            mask: '+7 (***) ***-**-**',
+                                            withDDD: true,
+                                            dddMask: '+7 (***) ***-**-**',
+                                           }} 
+                                           onChangeText = {text => {
+                                            this.setState({
+                                                text: text
+                                            })
+                                           } }/>
                         </View>
 
                         <View style={input_style.input_container}>
