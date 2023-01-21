@@ -15,7 +15,8 @@ class Login extends Component {
 
         this.state = {
             secure: true,
-            text: '+7',
+            phone: '+7',
+            password: '',
         };
 
         this.show = this.show.bind(this);
@@ -46,22 +47,31 @@ class Login extends Component {
                     <View style={input_style.input_global_container}>
                         <View style={input_style.input_container}>
                             <Text style={input_style.input_text}>Номер телефона</Text>
-                            <TextInputMask style={input_style.input} type={'custom'} value={this.state.text} keyboardType='numeric'
+                            <TextInputMask style={input_style.input} type={'custom'} value={this.state.phone} keyboardType='numeric'
                                            options={{
                                             mask: '+7 (***) ***-**-**',
                                             withDDD: true,
                                             dddMask: '+7 (***) ***-**-**',
                                            }} 
                                            onChangeText = {text => {
-                                            this.setState({
-                                                text: text
-                                            })
+                                                this.setState({
+                                                    phone: text
+                                                })
                                            } }/>
                         </View>
 
                         <View style={input_style.input_container}>
                             <Text style={input_style.input_text}>Пароль</Text>
-                            <TextInput style={input_style.input} selectionColor={'#23232340'} secureTextEntry={this.state.secure} />
+                            <TextInput style={input_style.input} selectionColor={'#23232340'} secureTextEntry={this.state.secure} value={this.state.password}
+                                       onChangeText = {text => {
+                                            const regex = /^[a-z]*[0-9]*/
+
+                                            if (text.length <= 16 && text.slice(text.length - 1).match(regex) != null) {
+                                                this.setState({
+                                                    password: text
+                                                })
+                                            }
+                                        }} />
                             <TouchableOpacity style={input_style.password_container} onPress={this.show}>
                                 {eye}
                             </TouchableOpacity>
