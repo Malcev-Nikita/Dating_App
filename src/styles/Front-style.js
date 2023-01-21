@@ -4,8 +4,9 @@ import { StyleSheet } from 'react-native';
 const front_style = StyleSheet.create({
 
     login_container: {
-        justifyContent: 'center',
-        alignItems: 'center',
+        position: 'absolute',
+        bottom: -10,
+        left: '21%',
         flexDirection: 'row',
         height: 50,
     },

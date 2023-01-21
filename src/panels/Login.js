@@ -64,9 +64,7 @@ class Login extends Component {
                             <Text style={input_style.input_text}>Пароль</Text>
                             <TextInput style={input_style.input} selectionColor={'#23232340'} secureTextEntry={this.state.secure} value={this.state.password}
                                        onChangeText = {text => {
-                                            const regex = /^[a-z]*[0-9]*/
-
-                                            if (text.length <= 16 && text.slice(text.length - 1).match(regex) != null) {
+                                            if (text.length <= 16) {
                                                 this.setState({
                                                     password: text
                                                 })
@@ -78,7 +76,7 @@ class Login extends Component {
                         </View>
                     </View>
 
-                    <View style={button_style.total_black_button_container}>
+                    <View style={button_style.total_blacks_button_container}>
                         <TouchableOpacity style={button_style.total_grey_button} onPress={() => this.props.navigation.navigate('Front')}>
                             <Image source={require('../image/icon/free-icon-back.png')} style={button_style.total_black_button_image} />
                         </TouchableOpacity>

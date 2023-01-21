@@ -5,8 +5,7 @@ const input_style = StyleSheet.create({
     
     input_global_container: {
       flex: 1,
-      justifyContent: 'flex-end',
-      marginBottom: -100,
+      justifyContent: 'center',
     },
 
     input_container: {

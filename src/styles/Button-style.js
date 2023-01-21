@@ -1,14 +1,21 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 
 const button_style = StyleSheet.create({
 
     total_black_button_container: { 
-        flex: 1,
         flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'flex-end',
-        marginBottom: 70,
+        position: 'absolute',
+        // left: '24%',
+        transform: [ {translateX: } ],
+        bottom: 50,
+    },
+
+    total_blacks_button_container: { 
+        flexDirection: 'row',
+        position: 'absolute',
+        left: '15%',
+        bottom: 50,
     },
 
     total_black_button: {
