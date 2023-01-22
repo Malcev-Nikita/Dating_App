@@ -46,7 +46,6 @@ const button_style = StyleSheet.create({
         borderRadius: 25,
         margin: 5,
     },  
-    
 });
 
 export default button_style

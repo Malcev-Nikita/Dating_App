@@ -62,7 +62,8 @@ class Register extends Component {
                                                 this.setState({
                                                     phone: text
                                                 })
-                                        } }/>
+                                        } }
+                            />
                         </View>
 
                         <View style={input_style.input_container}>
