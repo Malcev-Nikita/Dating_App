@@ -42,12 +42,29 @@ const input_style = StyleSheet.create({
     },
 
     dropdown_container: {
-        width: '40%',
-        // borderWidth: 2,
-        // borderColor: '#232323',
-        // borderRadius: 8,
+        width: '48%',
     },
 
+    dropdown_text: {
+        textAlign: 'center'
+    },  
+
+    age_container: {
+        width: '48%',
+    },
+
+    age_text: {
+        textAlign: 'center',
+    },
+
+    age_input: {
+        height: 50,
+        borderWidth: 2,
+        borderColor: '#232323',
+        borderRadius: 8,
+        color: '#232323',
+        paddingLeft: 13,
+    },
 });
 
 export default input_style

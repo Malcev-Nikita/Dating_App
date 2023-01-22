@@ -22,6 +22,14 @@ const register = StyleSheet.create({
         marginRight: 17,
         letterSpacing: 1.4,
     },
+
+    inputs_container: {
+        flexDirection: 'row', 
+        justifyContent: 'space-between',
+        width: '70%',
+        marginLeft: '15%',
+        marginRight: '10%',
+    }
 });
 
 export default register
