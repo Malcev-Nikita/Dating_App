@@ -39,7 +39,14 @@ const input_style = StyleSheet.create({
     password_icon: {
         width: 35,
         height: 35,
-    }
+    },
+
+    dropdown_container: {
+        width: '40%',
+        // borderWidth: 2,
+        // borderColor: '#232323',
+        // borderRadius: 8,
+    },
 
 });
 

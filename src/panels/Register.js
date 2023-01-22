@@ -1,8 +1,9 @@
 import React, {Component, useState} from 'react';
 import { Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { TextInput } from 'react-native-gesture-handler';
-import { TextInputMask } from 'react-native-masked-text'
+import { TextInputMask } from 'react-native-masked-text';
+import DropdownMenu from 'react-native-dropdown-menu';
 
 import global from '../styles/Global-style'
 import logo_style from '../styles/Logo-style';
@@ -18,6 +19,7 @@ class Register extends Component {
             secure: true,
             phone: '+7',
             password: '',
+            gender: '',
         };
 
         this.show = this.show.bind(this); 
@@ -35,6 +37,8 @@ class Register extends Component {
         if (this.state.secure) eye = <Image source={require('../image/icon/free-icon-open-eye.png')} style={input_style.password_icon} />
 
         else  eye = <Image source={require('../image/icon/free-icon-eye.png')} style={input_style.password_icon} />
+
+        var data = [["Не выбран", "Мужской", "Женский"]];
 
         return (
             <KeyboardAwareScrollView contentContainerStyle={{height: Dimensions.get('screen').height}}>
@@ -78,6 +82,22 @@ class Register extends Component {
                             <TouchableOpacity style={input_style.password_container} onPress={this.show}>
                                 {eye}
                             </TouchableOpacity>
+                        </View>
+
+                        <View style={input_style.dropdown_container}>
+                            <Text>Пол</Text>
+                            <DropdownMenu
+                                // bgColor={'white'}
+                                // tintColor={'#666666'}
+                                activityTintColor={'gray'}
+                                // arrowImg={}      
+                                // checkImage={}   
+                                // optionTextStyle={{color: '#333333'}}
+                                // titleStyle={{color: '#333333'}} 
+                                // maxHeight={300} 
+                                handler={(selection, row) => this.setState({text: data[selection][row]})}
+                                data={data}
+                                />
                         </View>
                     </View>
 
