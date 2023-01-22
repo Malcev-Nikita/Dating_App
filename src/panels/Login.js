@@ -76,7 +76,7 @@ class Login extends Component {
                         </View>
                     </View>
 
-                    <View style={button_style.total_blacks_button_container}>
+                    <View style={button_style.total_black_button_container}>
                         <TouchableOpacity style={button_style.total_grey_button} onPress={() => this.props.navigation.navigate('Front')}>
                             <Image source={require('../image/icon/free-icon-back.png')} style={button_style.total_black_button_image} />
                         </TouchableOpacity>

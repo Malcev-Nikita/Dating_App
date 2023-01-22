@@ -6,16 +6,9 @@ const button_style = StyleSheet.create({
     total_black_button_container: { 
         flexDirection: 'row',
         position: 'absolute',
-        // left: '24%',
-        transform: [ {translateX: } ],
-        bottom: 50,
-    },
-
-    total_blacks_button_container: { 
-        flexDirection: 'row',
-        position: 'absolute',
-        left: '15%',
-        bottom: 50,
+        width: (Dimensions.get('screen').width),
+        justifyContent: 'center',
+        bottom: 70,
     },
 
     total_black_button: {

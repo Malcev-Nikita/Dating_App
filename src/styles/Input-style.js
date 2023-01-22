@@ -6,6 +6,7 @@ const input_style = StyleSheet.create({
     input_global_container: {
       flex: 1,
       justifyContent: 'center',
+      marginBottom: 140,
     },
 
     input_container: {
