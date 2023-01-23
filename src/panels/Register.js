@@ -35,6 +35,9 @@ class Register extends Component {
 
     examination() {
         console.log('Ошибка')
+        return (
+            <Error />
+        );
     }
 
     render() {
