@@ -4,6 +4,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { TextInput } from 'react-native-gesture-handler';
 import { TextInputMask } from 'react-native-masked-text';
 import DropdownMenu from 'react-native-dropdown-menu';
+import Error from './Error';
 
 import global from '../styles/Global-style'
 import logo_style from '../styles/Logo-style';
@@ -30,6 +31,10 @@ class Register extends Component {
         this.setState({
             secure: !this.state.secure,
         });
+    }
+
+    examination() {
+        console.log('Ошибка')
     }
 
     render() {
@@ -80,7 +85,8 @@ class Register extends Component {
                                                         password: text
                                                     })
                                                 }
-                                            }} />
+                                            }} 
+                            />
                             <TouchableOpacity style={input_style.password_container} onPress={this.show}>
                                 {eye}
                             </TouchableOpacity>
@@ -89,13 +95,12 @@ class Register extends Component {
                         <View style={register_style.inputs_container}>
                             <View style={input_style.dropdown_container}>
                                 <Text style={input_style.dropdown_text}>Пол</Text>
-                                <DropdownMenu
-                                    style={input_style.dropdown}
-                                    activityTintColor={'green'}
-                                    handler={(selection, row) => this.setState({text: data[selection][row]})}
-                                    data={data}
-                                    bgColor={'#00000000'}
-                                    />
+                                <DropdownMenu   style={input_style.dropdown}
+                                                activityTintColor={'green'}
+                                                handler={(selection, row) => this.setState({text: data[selection][row]})}
+                                                data={data}
+                                                bgColor={'#00000000'}
+                                />
                             </View>
 
                             <View style={input_style.age_container}>
@@ -118,7 +123,7 @@ class Register extends Component {
                             <Image source={require('../image/icon/free-icon-back.png')} style={button_style.total_black_button_image} />
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={register_style.total_black_button_reg}>
+                        <TouchableOpacity style={register_style.total_black_button_reg} onPress={this.examination}>
                             <Text style={register_style.total_black_button_reg_text} >Регистрация</Text>
                             <Image source={require('../image/icon/enter.png')} style={button_style.total_black_button_image} />
                         </TouchableOpacity>
