@@ -13,43 +13,44 @@ class Error extends React.Component {
     
     this.state = {
         text: '',
-        visable: false,
+        visable: 0,
     };
 
-    this.callError = this.callError.bind(this); 
-  }
-
-  callError () {
-    const codeError = this.props.CodeError
-
-    this.setState({
-        visable: true,
-        text: ERRORCODE.code
-    });
+    this.closeError = this.closeError.bind(this); 
   }
 
   closeError () {
     this.setState({
-        visable: false,
+        visable: 1,
         text: ''
     });
   }
 
   render() {
-    return (
-        <View style={error_style.error_container}>
-            <TouchableOpacity>
-                <Image source={require('../image/icon/close.png')} />
-            </TouchableOpacity>
+    if (this.props.Visable && this.state.visable < 1)
+    {
+      return (
+        <View style={error_style.error_opacity} >
+            <View style={error_style.error_container}>
 
-            <Text>{this.state.text}</Text>
+              <TouchableOpacity style={error_style.error_close} onPress={this.closeError}>
+                  <Image source={require('../image/icon/close.png')} style={{width: 35, height: 35}} />
+              </TouchableOpacity>
+
+              <Text style={error_style.error_text}>
+                {this.state.text}
+              </Text>
+
+            </View>
         </View>
-    );
+     );
+    }
   };
 };
 
 Error.propTypes = {
     CodeError: PropTypes.string,
+    Visable: PropTypes.bool,
 }
 
 export default Error;

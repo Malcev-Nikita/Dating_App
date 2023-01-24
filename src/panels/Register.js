@@ -22,9 +22,13 @@ class Register extends Component {
             password: '',
             gender: '',
             age: '',
+
+            visableError: false,
+            codeError: '',
         };
 
         this.show = this.show.bind(this); 
+        this.examination = this.examination.bind(this); 
     }
 
     show() {
@@ -34,10 +38,11 @@ class Register extends Component {
     }
 
     examination() {
+        this.setState({
+            visableError: true
+        })
+        
         console.log('Ошибка')
-        return (
-            <Error />
-        );
     }
 
     render() {
@@ -126,11 +131,13 @@ class Register extends Component {
                             <Image source={require('../image/icon/free-icon-back.png')} style={button_style.total_black_button_image} />
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={register_style.total_black_button_reg} onPress={() => this.props.navigation.navigate('Home')}>
+                        <TouchableOpacity style={register_style.total_black_button_reg} onPress={this.examination}>
                             <Text style={register_style.total_black_button_reg_text} >Регистрация</Text>
                             <Image source={require('../image/icon/enter.png')} style={button_style.total_black_button_image} />
                         </TouchableOpacity>
                     </View>
+
+                    <Error Visable={this.state.visableError} />
                 </View>
             </KeyboardAwareScrollView>
         );
