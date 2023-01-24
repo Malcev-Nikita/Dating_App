@@ -126,7 +126,7 @@ class Register extends Component {
                             <Image source={require('../image/icon/free-icon-back.png')} style={button_style.total_black_button_image} />
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={register_style.total_black_button_reg} onPress={this.examination}>
+                        <TouchableOpacity style={register_style.total_black_button_reg} onPress={() => this.props.navigation.navigate('Home')}>
                             <Text style={register_style.total_black_button_reg_text} >Регистрация</Text>
                             <Image source={require('../image/icon/enter.png')} style={button_style.total_black_button_image} />
                         </TouchableOpacity>
