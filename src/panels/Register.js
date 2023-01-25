@@ -39,8 +39,10 @@ class Register extends Component {
 
     examination() {
         this.setState({
-            visableError: true
+            visableError: true,
         })
+
+        Error.state.visable = true
         
         console.log('Ошибка')
     }
@@ -144,4 +146,5 @@ class Register extends Component {
     };
 };
   
+
 export default Register;

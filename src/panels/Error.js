@@ -13,7 +13,7 @@ class Error extends React.Component {
     
     this.state = {
         text: '',
-        visable: 0,
+        visable,
     };
 
     this.closeError = this.closeError.bind(this); 
@@ -21,13 +21,13 @@ class Error extends React.Component {
 
   closeError () {
     this.setState({
-        visable: 1,
+        visable: false,
         text: ''
     });
   }
 
   render() {
-    if (this.props.Visable && this.state.visable < 1)
+    if (this.state.visable)
     {
       return (
         <View style={error_style.error_opacity} >
@@ -49,8 +49,8 @@ class Error extends React.Component {
 };
 
 Error.propTypes = {
-    CodeError: PropTypes.string,
-    Visable: PropTypes.bool,
+  CodeError: PropTypes.string,
+  Visable: PropTypes.bool,
 }
 
 export default Error;
