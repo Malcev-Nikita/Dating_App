@@ -5,10 +5,14 @@ const logo_style = StyleSheet.create({
 
     logo_container: {
         marginTop: 40,
-        flexDirection: 'row',
+        flexDirection: 'column',
         alignItems: 'flex-start',
         marginLeft: 20
     },  
+
+    logo_text_container: {
+        flexDirection: 'row',
+    },
     
     logo: {
         width: 50,
