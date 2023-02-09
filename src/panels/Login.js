@@ -1,10 +1,11 @@
 import React, { Component, useState } from 'react';
 import { Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { TextInput } from 'react-native-gesture-handler';
-import { TextInputMask } from 'react-native-masked-text'
+import { TextInputMask } from 'react-native-masked-text';
+import {LinearGradient} from 'expo-linear-gradient';
 
-import global from '../styles/Global-style'
+import global from '../styles/Global-style';
 import logo_style from '../styles/Logo-style';
 import input_style from '../styles/Input-style';
 import button_style from '../styles/Button-style';
@@ -38,10 +39,10 @@ class Login extends Component {
         
         return (
             <KeyboardAwareScrollView contentContainerStyle={{height: Dimensions.get('screen').height}}>
-                <View style={global.input_container}>
+                <LinearGradient colors={['#C7A0CB', '#A6CAE5']} style={global.container} start={[0, 0]} end={[1, 1]} locations={[0.1, 0.6]} >
                     <View style={logo_style.logo_container} >
                         <Image source={require('../image/img/logo.png')} style={logo_style.logo} />
-                        <Text style={logo_style.logo_text} >FELL IN FEELS</Text>
+                        <Text style={logo_style.logo_text} >FIFI</Text>
                     </View>
 
                     <View style={input_style.input_global_container}>
@@ -86,7 +87,7 @@ class Login extends Component {
                             <Image source={require('../image/icon/enter.png')} style={button_style.total_black_button_image} />
                         </TouchableOpacity>
                     </View>
-                </View>
+                </LinearGradient>
             </KeyboardAwareScrollView >
         );
     }
