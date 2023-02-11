@@ -5,7 +5,7 @@ const logo_style = StyleSheet.create({
 
     logo_container: {
         marginTop: 40,
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'flex-start',
         marginLeft: 20
     },  
@@ -20,11 +20,12 @@ const logo_style = StyleSheet.create({
     },
 
     logo_text: {
-        fontSize: 26,
-        fontWeight: '600',
+        fontFamily: 'nunito-semibold',
+        fontSize: 28,
         lineHeight: 45,
         marginLeft: 10,
-        letterSpacing: 1.2,
+        letterSpacing: 5,
+        color: '#fff',
     },  
 
 });

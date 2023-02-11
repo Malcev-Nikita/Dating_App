@@ -6,6 +6,7 @@ const input_style = StyleSheet.create({
     input_global_container: {
       flex: 1,
       justifyContent: 'center',
+      alignItems: 'center',
       marginBottom: 140,
     },
 
@@ -20,19 +21,23 @@ const input_style = StyleSheet.create({
     input: {
         height: 50,
         borderWidth: 2,
-        borderColor: '#232323',
+        borderColor: '#000',
         borderRadius: 8,
         color: '#232323',
         paddingLeft: 13,
     },
     
     input_text: {
+        fontFamily: 'nunito-semibold',
         justifyContent: 'flex-start',
+        color: '#fff',
+        fontSize: 15,
+        marginBottom: 5,
     },
 
     password_container: {
         position: 'absolute',
-        top: 27,
+        top: 32,
         right: 20,
     },
 

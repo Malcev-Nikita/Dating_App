@@ -3,14 +3,15 @@ import { Text, View, Image, TouchableOpacity, Dimensions, Animated } from 'react
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { TextInput } from 'react-native-gesture-handler';
 import { TextInputMask } from 'react-native-masked-text';
+import { LinearGradient } from 'expo-linear-gradient';
 import DropdownMenu from 'react-native-dropdown-menu';
-import Error from './Error';
 
 import global from '../styles/Global-style'
-import logo_style from '../styles/Logo-style';
 import input_style from '../styles/Input-style';
 import button_style from '../styles/Button-style';
 import register_style from '../styles/Register-style';
+
+import Logo from '../components/Logo';
 
 class Register extends Component {
     constructor(props) {
@@ -22,29 +23,15 @@ class Register extends Component {
             password: '',
             gender: '',
             age: '',
-
-            visableError: false,
-            codeError: '',
         };
 
         this.show = this.show.bind(this); 
-        this.examination = this.examination.bind(this); 
     }
 
     show() {
         this.setState({
             secure: !this.state.secure,
         });
-    }
-
-    examination() {
-        this.setState({
-            visableError: true,
-        })
-
-        Error.state.visable = true
-        
-        console.log('Ошибка')
     }
 
     render() {
@@ -58,11 +45,8 @@ class Register extends Component {
 
         return (
             <KeyboardAwareScrollView contentContainerStyle={{height: Dimensions.get('screen').height}}>
-                <View style={global.input_container}>
-                    <View style={logo_style.logo_container} >
-                        <Image source={require('../image/img/logo.png')} style={logo_style.logo} />
-                        <Text style={logo_style.logo_text} >FELL IN FEELS</Text>
-                    </View>
+                <LinearGradient colors={['#C7A0CB', '#A6CAE5']} style={global.container} start={[0, 0]} end={[1, 1]} locations={[0.1, 0.6]} >
+                    <Logo />
 
                     <View style={input_style.input_global_container}>
                         <View style={input_style.input_container}>
@@ -128,19 +112,23 @@ class Register extends Component {
                         </View>
                     </View>
 
-                    <View style={button_style.total_black_button_container}>
-                        <TouchableOpacity style={button_style.total_grey_button} onPress={() => this.props.navigation.navigate('Front')}>
-                            <Image source={require('../image/icon/free-icon-back.png')} style={button_style.total_black_button_image} />
+                    <View style={button_style.double_button_container}>
+          
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Front')}>
+                            <LinearGradient colors={['#F9CF79', '#E7B564', '#D59A4F']} style={button_style.double_button_small} start={[0, 0]} end={[1, 1]}>
+                                <Image source={require('../image/icon/back.png')} style={button_style.double_button_image} />
+                            </LinearGradient>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={register_style.total_black_button_reg} onPress={this.examination}>
-                            <Text style={register_style.total_black_button_reg_text} >Регистрация</Text>
-                            <Image source={require('../image/icon/enter.png')} style={button_style.total_black_button_image} />
+                        <TouchableOpacity>
+                            <LinearGradient colors={['#F3955F', '#D86B42', '#BD4025']} style={button_style.double_button} start={[0, 0]} end={[1, 1]}>
+                                <Text style={button_style.double_button_text}>Регистрация</Text>
+                                <Image source={require('../image/icon/enter.png')} style={button_style.double_button_image}/>
+                            </LinearGradient>
                         </TouchableOpacity>
+
                     </View>
-
-                    <Error Visable={this.state.visableError} />
-                </View>
+                </LinearGradient>
             </KeyboardAwareScrollView>
         );
     };
